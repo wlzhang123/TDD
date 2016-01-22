@@ -32,8 +32,17 @@ class HomePageTest(TestCase):
 
 		request = HttpRequest() # You have to add from django.http import HttpRequest on the header
 		response = home_page(request)
-		self.assertTrue(response.content.startswith(b'<html>'))
+		## Test for Constant
+		# self.assertTrue(response.content.startswith(b'<html>'))
 
-		self.assertIn(b'<title>To-Do lists</title>',response.content)
-		self.assertTrue(response.content.endswith(b'<html>'))
+		# self.assertIn(b'<title>To-Do lists</title>',response.content)
+		# self.assertTrue(response.content.endswith(b'<html>'))
+
+		## Test for logic:
+
+		expected_html = render_to_string('home.html') # from django.template.loader import render_to_string
+		# use decode() to transfer response.content to unicode. 
+		self.assertEqual(response.content.decode(),expected_html)
+
+
 
