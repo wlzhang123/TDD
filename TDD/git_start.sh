@@ -4,6 +4,8 @@ git config --golbal user.email "weilinzhang60@hotmail.com"
 # see which branches I have now
 git remote
 
-#git add_start.sh
-#git commit -m "add git script into a file"
-#git commit -am "add comment into this git_start.sh"
+# git add_start.sh
+# git commit -m "add git script into a file"
+# git commit -am "add comment into this git_start.sh"
+## push local bransh origin to remote 
+# git push origin master
